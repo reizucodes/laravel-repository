@@ -1,0 +1,28 @@
+{
+    "name": "blaisebueno/laravel-repository",
+    "description": "A Laravel package to implement a repository design structure.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "John Blaise Bueno",
+            "email": "blaisebueno@gmai.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BlaiseBueno\\LaravelRepository\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BlaiseBueno\\LaravelRepository\\LaravelRepositoryServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

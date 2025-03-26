@@ -11,7 +11,7 @@ Run the following command in your Laravel project:
 composer require blaisebueno/laravel-repository
 ```
 
-### **Step 2: Register the Service Provider**  
+### **Step 2: Register the Service Provider for Publishing**  
 If you are using Laravel 5.5+ with package auto-discovery, you can skip this step.  
 Otherwise, manually add the service provider in `config/app.php` under the **Package Service Providers** section:
 
@@ -36,7 +36,17 @@ This will publish the following:
 - `app/Repositories/BaseRepository.php`
 - `app/Repositories/Interfaces/EloquentInterface.php`
 
-### **Step 4: Register the `make:repository` Command**  
+### **Step 4: Register the Repository Service Provider**  
+Add the repository service provider in `config/app.php` under the **Application Service Providers**:
+
+```php
+/*
+ * Application Service Providers...
+ */
+App\Providers\RepositoryServiceProvider::class,
+```
+
+### **Step 5: Register the `make:repository` Command**  
 After publishing, register the command in `app/Console/Kernel.php`:
 
 ```php
@@ -45,7 +55,7 @@ protected $commands = [
 ];
 ```
 
-### **Step 5: Usage**  
+### **Step 6: Usage**  
 You can now generate a new repository using:
 
 ```sh

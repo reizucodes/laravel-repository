@@ -9,6 +9,12 @@
             "email": "blaisebueno@gmai.com"
         }
     ],
+    "keywords": [
+        "laravel",
+        "repository",
+        "design pattern",
+        "repository pattern"
+    ],
     "require": {
         "php": "^7.0|^8.0"
     },

@@ -8,6 +8,6 @@ interface EloquentInterface
 {
     public function create(array $attributes): Model;
     public function find(int $id): ?Model;
-    public function update(array $attributes, $id);
+    public function update(array $attributes, int $id);
     public function destroy(int $id);
 }

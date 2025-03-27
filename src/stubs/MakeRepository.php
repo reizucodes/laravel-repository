@@ -117,7 +117,7 @@ class MakeRepository extends Command
 
     protected function getRepositoryTemplate(string $name, string $namespace): string
     {
-        return "<?php\n\nnamespace {$namespace};\n\nuse App\Repositories\Interfaces\\{$name}Interface;\n\nclass {$name}Repository extends BaseRepository implements {$name}Interface\n{\n    // Define methods here\n}\n";
+    return "<?php\n\nnamespace {$namespace};\n\nuse App\Repositories\Interfaces\\{$name}Interface;\nuse App\Models\\{$name};\n\nclass {$name}Repository extends BaseRepository implements {$name}Interface\n{\n    public function __construct({$name} \$model)\n    {\n        parent::__construct(\$model);\n    }\n\n    // Define methods here\n}\n";
     }
 
     protected function getServiceTemplate(string $name, string $namespace): string

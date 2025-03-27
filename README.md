@@ -71,7 +71,12 @@ php artisan make:repository ExampleRepository
 
 This will create:
 - `app/Repositories/ExampleRepository.php`
-- `app/Repositories/Interfaces/ExampleRepositoryInterface.php`
+- `app/Repositories/Interfaces/ExampleInterface.php`
+
+If you want to generate a corresponding service file, add the `--s` flag:
+
+This will additionally create:
+- `app/Services/ExampleService.php`
 
 Modify these files according to your needs.
 

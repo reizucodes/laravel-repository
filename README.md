@@ -13,12 +13,15 @@ composer require blaisebueno/laravel-repository
 
 ### **Step 2: Register the Service Provider for Publishing**  
 If you are using Laravel 5.5+ with package auto-discovery, you can skip this step.  
-Otherwise, manually add the service provider in `config/app.php` under the **Package Service Providers** section:
+Otherwise, you need to manually register the service provider.
+
+### **For Laravel 10 and Below**  
+Add the service provider in `config/app.php`:
+
+### **For Laravel 11 and Above**  
+Add the service provider in `bootstrap/providers.php`:
 
 ```php
-/*
- * Package Service Providers...
- */
 \BlaiseBueno\LaravelRepository\LaravelRepositoryServiceProvider::class,
 ```
 
@@ -37,17 +40,21 @@ This will publish the following:
 - `app/Repositories/Interfaces/EloquentInterface.php`
 
 ### **Step 4: Register the Repository Service Provider**  
-Add the repository service provider in `config/app.php` under the **Application Service Providers**:
+
+### **For Laravel 10 and Below**  
+Add the service provider in `config/app.php`:
+
+### **For Laravel 11 and Above**  
+Add the service provider in `bootstrap/providers.php`:
 
 ```php
-/*
- * Application Service Providers...
- */
 App\Providers\RepositoryServiceProvider::class,
 ```
 
 ### **Step 5: Register the `make:repository` Command**  
 After publishing, register the command in `app/Console/Kernel.php`:
+
+> ⚠️ In Laravel 11 and above, `Kernel.php` has been removed. Custom commands in `app/Console/Commands` are now auto-discovered.
 
 ```php
 protected $commands = [

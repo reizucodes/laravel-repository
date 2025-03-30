@@ -6,7 +6,7 @@
     "authors": [
         {
             "name": "John Blaise Bueno",
-            "email": "blaisebueno@gmai.com"
+            "email": "blaisebueno@gmail.com"
         }
     ],
     "keywords": [
@@ -30,5 +30,5 @@
             ]
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }

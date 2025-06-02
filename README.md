@@ -1,7 +1,7 @@
 # Laravel Repository Package
 
-A Laravel package that provides a repository pattern implementation.
-
+A Laravel package implementing a clean, scalable repository design pattern architecture to abstract data persistence and promote testable, maintainable code.
+ 
 ## Installation
 
 ### **Step 1: Install via Composer**  
@@ -39,6 +39,8 @@ This will publish the following:
 - `app/Repositories/BaseRepository.php`
 - `app/Repositories/Interfaces/EloquentInterface.php`
 
+Adding `--force` flag will overwrite existing files.
+
 ### **Step 4: Register the Repository Service Provider**  
 
 ### **For Laravel 10 and Below**  
@@ -52,10 +54,16 @@ App\Providers\RepositoryServiceProvider::class,
 ```
 
 ### **Step 5: Register the `make:repository` Command**  
-After publishing, register the command in `app/Console/Kernel.php`:
 
 > ⚠️ In Laravel 11 and above, `Kernel.php` has been removed. Custom commands in `app/Console/Commands` are now auto-discovered.
 
+> ⚠️ If your `App\Console\Kernel` contains the default line below, **no manual registration is required**:
+
+```php
+$this->load(__DIR__.'/Commands');
+```
+
+If you're using a custom path or want to register explicitly, add the following in `app/Console/Kernel.php`:
 ```php
 protected $commands = [
     \App\Console\Commands\MakeRepository::class,
@@ -72,6 +80,8 @@ php artisan make:repository ExampleRepository
 This will create:
 - `app/Repositories/ExampleRepository.php`
 - `app/Repositories/Interfaces/ExampleInterface.php`
+
+Adding `--force` flag will overwrite existing files.
 
 If you want to generate a corresponding service file, add the `--s` flag:
 

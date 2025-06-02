@@ -1,6 +1,6 @@
 {
     "name": "blaisebueno/laravel-repository",
-    "description": "A Laravel package to implement a repository design structure.",
+    "description": "A Laravel package implementing a clean, scalable repository design pattern architecture to abstract data persistence and promote testable, maintainable code.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -13,10 +13,13 @@
         "laravel",
         "repository",
         "design pattern",
-        "repository pattern"
+        "repository pattern",
+        "data abstraction",
+        "service layer",
+        "php"
     ],
     "require": {
-        "php": "^7.0|^8.0"
+        "php": "^7.4|^8.0"
     },
     "autoload": {
         "psr-4": {

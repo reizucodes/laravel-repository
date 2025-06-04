@@ -74,19 +74,19 @@ protected $commands = [
 You can now generate a new repository using:
 
 ```sh
-php artisan make:repository ExampleRepository
+php artisan make:repository User
 ```
 
 This will create:
-- `app/Repositories/ExampleRepository.php`
-- `app/Repositories/Interfaces/ExampleInterface.php`
+- `app/Repositories/UserRepository.php`
+- `app/Repositories/Interfaces/UserInterface.php`
 
 Adding `--force` flag will overwrite existing files.
 
 If you want to generate a corresponding service file, add the `--s` flag:
 
 This will additionally create:
-- `app/Services/ExampleService.php`
+- `app/Services/UserService.php`
 
 Modify these files according to your needs.
 
